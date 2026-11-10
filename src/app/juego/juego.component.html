@@ -1,0 +1,52 @@
+<section class="game-banner text-center py-4">
+    <div class="container">
+        <h1 class="display-5 fw-bold font-serif mb-2 text-dark-navy">Encuentra la combinación</h1>
+        <p class="section-subtitle mb-0">Descubre dónde se esconden los pares de la casa</p>
+    </div>
+</section>
+
+<main class="game-section py-5">
+    <div class="container d-flex flex-column align-items-center">
+        <div class="game-card-wrapper shadow-lg p-4 p-md-5 rounded-4 bg-white">
+            <div class="target-images-container text-center mb-4 pb-2 border-bottom">
+                <span class="target-label text-uppercase fw-bold d-block mb-3">
+                    Busca esta combinación:
+                </span>
+                <div class="d-flex justify-content-center align-items-center gap-3 gap-md-4">
+                    <div class="target-card">
+                        <img [src]="imagenComida" alt="Plato a buscar">
+                    </div>
+                    <span class="plus-icon">+</span>
+                    <div class="target-card">
+                        <img [src]="imagenBebida" alt="Bebida a buscar">
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-grid">
+                <div
+                    class="memory-card" *ngFor="let carta of cartas"
+                    (click)="seleccionarCarta(carta)">
+
+                    <ng-container *ngIf="carta.encontrada; else oculta">
+                        <img *ngIf="carta.tipo !== 'x'" [src]="carta.imagen" alt="Imagen encontrada">
+                        <span *ngIf="carta.tipo === 'x'" class="card-icon">X</span>
+                    </ng-container>
+
+                    <ng-template #oculta><span class="card-icon">?</span></ng-template>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="juegoTerminado" class="modal-ganador">
+            <div class="contenido-ganador">
+                <button class="btn-cerrar" (click)="cerrarModal()">&times;</button>
+                <div class="icono-ganador">🏆</div>
+                <h2>¡Felicidades!</h2>
+                <p>Encontraste la combinación de MANILA.</p>
+                <p class="intentos-texto">Intentos realizados: {{ intentos }}</p>
+                <button class="btn btn-reiniciar" (click)="iniciarJuego()">Volver a jugar</button>
+            </div>
+        </div>
+    </div>
+</main>

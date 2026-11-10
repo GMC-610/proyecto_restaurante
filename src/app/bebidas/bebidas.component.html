@@ -1,0 +1,115 @@
+
+<section class="page-header text-center text-white py-5 d-flex align-items-center">
+    <div class="container py-4">
+        <h1 class="display-4 font-serif fw-bold mb-3">Nuestra Barra</h1>
+        <p class="lead max-width-600 mx-auto opacity-90">
+            Cócteles, vinos y bebidas refrescantes
+            ideales para acompañar tus momentos frente al mar.</p>
+    </div>
+</section>
+
+<section class="search-section">
+    <div class="container">
+        <div class="search-container">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="search-bar shadow-sm">
+                        <i class="bi bi-search"></i>
+                        <input type="text" [(ngModel)]="nombreBusquedaB" placeholder="Buscar cóctel por nombre..." >
+                        <button type="button" (click)="obtenerDatosBN(nombreBusquedaB)"> Buscar </button>
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                        <div class="search-bar shadow-sm">
+                            <i class="bi bi-search"></i>
+                            <input type="text" [(ngModel)]="ingredienteBusquedaB" placeholder="Buscar por ingrediente..."
+                                (keyup.enter)="obtenerDatosBI(ingredienteBusquedaB)">
+
+                            <button type="button" (click)="obtenerDatosBI(ingredienteBusquedaB)">Buscar </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="search-bar shadow-sm">
+                            <i class="bi bi-funnel"></i>
+                            <select class="search-select" aria-label="Filtrar por tipo de bebida" [(ngModel)]="tipoSeleccionado"
+                                    (change)="obtenerDatosBA(tipoSeleccionado)">
+                                    
+                                    <option value="" disabled selected> Filtrar por tipo de bebida...</option>
+                                    <option value="Alcoholic">Alcohólica</option>
+                                    <option value="Non_Alcoholic">Sin Alcohol</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="category-filters d-flex justify-content-center flex-wrap gap-2">
+                        <button class="btn btn-filter" (click)="obtenerBebidasIniciales()"> Todas </button>
+                        <button class="btn btn-filter" (click)="obtenerDatosBC('Ordinary Drink')">Bebida Ordinaria</button>
+                        <button class="btn btn-filter" (click)="obtenerDatosBC('Shot')">Shots</button>
+                        <button class="btn btn-filter" (click)="obtenerDatosBC('Cocoa')">Cocoa</button>
+                        <button class="btn btn-filter" (click)="obtenerDatosBC('Cocktail')">Cócteles</button>
+                        <button class="btn btn-filter" (click)="obtenerDatosBC('Beer')">Cerveza</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</section>
+
+
+<section class="bebidas-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" *ngFor="let bebida of bebidas">
+                <div class="food-card">
+                    <div class="food-img-wrapper position-relative">
+                        <img [src]="bebida.strDrinkThumb" [alt]="bebida.strDrink">
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>{{ bebida.strDrink }}</h3>
+                            <span class="precio">{{ bebida.precio | currency:'$':'symbol':'1.0-0' }}</span>
+                        </div>
+                        <details class="ingredientes">
+                            <summary class="btn-ingredientes">Ver Ingredientes</summary>
+                            <ul>
+                                <li *ngFor="let ingrediente of bebida.Ingredient">{{ ingrediente }}</li>
+                            </ul>
+                        </details>
+                        <hr>
+                        <div class="acciones">
+                            <div class="cantidad">
+                                <label>Cantidad</label>
+                                <div class="control-cantidad">
+                                    <button type="button" class="btn btn-primary" (click)="disminuirCantidad(bebida)"> −</button>
+
+                                    <input type="number" class="form-control" [value]="bebida.cantidad" readonly>
+
+                                    <button type="button"class="btn btn-primary"(click)="aumentarCantidad(bebida)">+</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button class="btn-agregar" (click)="agregarAlPedido(bebida)">Agregar al Pedido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal-fondo" *ngIf="mostrarModal">
+    <div class="modal-contenido">
+        <div class="modal-icono">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+
+        <h3>¡Producto agregado!</h3>
+        <p>La bebida se agregó correctamente a tu carrito.</p>
+
+        <button class="btn-modal" (click)="cerrarModal()"> Aceptar</button>
+    </div>
+</div>

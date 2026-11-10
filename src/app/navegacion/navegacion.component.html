@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/">
+            <img
+                src="/assets/images/logo_manila.png"
+                class="logo-manila"
+            >
+            <span>MANILA</span>
+            </a>
+    </div>
+        <ul  class="nav nav-pills justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/comidas" routerLinkActive="active">Comidas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/bebidas" routerLinkActive="active">Bebidas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/juego" routerLinkActive="active">Juego</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/pedidos" routerLinkActive="active">Pedidos</a>
+            </li>
+        </ul>
+    
+</nav>
+<router-outlet></router-outlet>

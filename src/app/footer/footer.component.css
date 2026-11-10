@@ -1,0 +1,97 @@
+
+.footer-manila {
+    background-color: #568BB9;
+    color: #F8F9FA;
+    padding: 65px 0 20px;
+    margin: auto;
+}
+
+.footer-manila .container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-manila .logo-manila {
+    color: white;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-family: Georgia, serif;
+    margin-bottom: 20px;
+}
+
+.footer-manila .logo-manila span {
+    color: #C5AD82;
+}
+
+.footer-manila h3 {
+    color: #263F50;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.footer-manila p {
+    color: #F8F9FA;
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.footer-manila hr {
+    border-color: rgba(255,255,255,0.5);
+    margin: 25px 0;
+}
+
+.footer-manila a {
+    display: block;
+    text-decoration: none;
+    color: #F8F9FA;
+    font-size: 19px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+/* EFECTO DEL MOUSE */
+
+.footer-manila a:hover {
+    color: #263F50;
+    padding-left: 6px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #F8F9FA;
+    padding: 3px;
+}
+
+.footer-brand h3 {
+    margin: 0;
+    color: #263F50;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+}

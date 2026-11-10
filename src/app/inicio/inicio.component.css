@@ -1,0 +1,276 @@
+
+:host {
+  --color-pearl: #F8F9FA;
+  --color-stone: #E9ECEF;
+  --color-gold: #C5AD82;
+  --color-navy: #263F50;
+  --color-white: #FFFFFF;
+}
+
+
+.font-serif {
+  font-family: Georgia, serif;
+}
+
+.bg-sand {
+  height: 700px;
+  padding: 0 20px;
+  background-color: var(--color-pearl);
+  display: flex;
+  align-items: center;
+}
+
+.text-dark-navy,
+.bg-sand h2 {
+  color: var(--color-navy);
+}
+
+.text-gold {
+  color: #DCEAF4;
+}
+
+.tracking-widest {
+  letter-spacing: 0.15em;
+}
+
+.hero-section {
+  height: 85vh;
+  min-height: 550px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 45, 60, 0.25),
+    rgba(25, 45, 60, 0.70)
+  );
+  z-index: 2;
+}
+
+.brand-title {
+  letter-spacing: 0.12em;
+  font-family: Georgia, serif;
+  text-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+}
+
+.bg-sand p {
+  color: #66747E;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.bg-sand img {
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.bg-sand img:hover {
+  transform: scale(1.02);
+}
+
+.experiences-section {
+  background-color: var(--color-stone);
+  padding: 100px 0;
+}
+
+.section-heading {
+  margin-bottom: 55px;
+}
+
+.section-heading h2 {
+  color: var(--color-navy);
+  font-family: Georgia, serif;
+  font-size: 38px;
+}
+
+.section-heading p {
+  color: #66747E;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.experience-card {
+  background-color: var(--color-white);
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(38, 63, 80, 0.07);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(38, 63, 80, 0.15);
+}
+
+.experience-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.experience-card:hover img {
+  transform: scale(1.04);
+}
+
+.experience-info {
+  padding: 25px 20px;
+}
+
+.experience-info h3 {
+  color: var(--color-navy);
+  font-size: 25px;
+  margin-bottom: 12px;
+  font-family: Georgia, serif;
+}
+
+.experience-info p {
+  color: #66747E;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+.featured-section {
+  padding: 60px 0 80px;
+  background-color: var(--color-pearl);
+}
+
+.section-label {
+  color: var(--color-gold);
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.food-card {
+  background-color: var(--color-white);
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(38, 63, 80, 0.07);
+  transition: all 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(38, 63, 80, 0.15);
+}
+
+.food-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover img {
+  transform: scale(1.04);
+}
+
+.food-info {
+  padding: 25px;
+}
+
+.food-info h4 {
+  color: var(--color-navy);
+  font-size: 27px;
+  font-family: Georgia, serif;
+  margin-bottom: 15px;
+}
+
+.food-info p {
+  color: #66747E;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollContinuous 22s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+
+@keyframes scrollContinuous {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track .gallery-card {
+  width: 260px;
+  height: 190px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(38, 63, 80, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.marquee-track .gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(38, 63, 80, 0.22);
+}
+
+.marquee-track .gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.marquee-track .gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.quote-section {
+  padding: 170px 20px;
+  background: linear-gradient(
+    rgba(103, 117, 127, 0.21)
+  ), url('https://cdn.jumeirah.com/api/public/content/d17d843766b44498b1c1aaff06959629?v=c4df5df0');
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #F8F9FA;
+}
+
+.quote-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 38px;
+  max-width: 750px;
+  margin: 25px auto;
+  line-height: 1.5;
+  color: #F8F9FA;
+}
+
+.quote-section p {
+  color: #DCEAF4;
+  letter-spacing: 2px;
+}

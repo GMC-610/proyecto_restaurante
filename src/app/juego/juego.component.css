@@ -1,0 +1,238 @@
+
+:host {
+    --color-pearl: #F8F9FA;
+    --color-stone: #E9ECEF;
+    --color-gold: #C5AD82;
+    --color-gold-hover: #A99065;
+    --color-navy: #263F50;
+    --color-blue: #6A9ECB;
+    --color-white: #FFFFFF;
+}
+
+.font-serif {
+    font-family: Georgia, serif;
+}
+
+.text-dark-navy {
+    color: var(--color-navy);
+}
+
+.game-banner {
+    background-color: var(--color-stone);
+    border-bottom: 1px solid rgba(38, 63, 80, 0.08);
+}
+
+.section-subtitle {
+    color: #66747E;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+
+.game-section {
+    background-color: var(--color-pearl);
+    min-height: 75vh;
+}
+
+.game-card-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    max-width: 580px;
+    width: 100%;
+}
+
+.max-width-container {
+    max-width: 580px;
+}
+
+.target-label {
+    color: #66747E;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.target-card {
+    width: 135px;
+    height: 135px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--color-gold);
+    box-shadow: 0 4px 12px rgba(38, 63, 80, 0.12);
+    background-color: var(--color-pearl);
+}
+
+.target-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.plus-icon {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-navy);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    justify-content: center;
+}
+
+.memory-card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-pearl);
+    border: 2px solid var(--color-stone);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(38, 63, 80, 0.04);
+    transition: all 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    box-shadow: 0 8px 20px rgba(38, 63, 80, 0.12);
+    background-color: var(--color-white);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-icon {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-navy);
+    user-select: none;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.memory-card:hover .card-icon {
+    opacity: 1;
+    color: var(--color-gold);
+}
+
+.btn-navy-outline {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    border: 1px solid var(--color-navy);
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-navy-outline:hover {
+    background-color: transparent;
+    color: var(--color-navy);
+    transform: translateY(-2px);
+}
+
+.btn-reiniciar {
+    background-color: #6A9ECB;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-reiniciar:hover {
+    background-color: #263F50;
+    color: white;
+    transform: scale(1.05);
+}
+
+.mensaje-ganador {
+    background-color: #e8f3e9;
+    border-radius: 15px;
+    padding: 20px;
+    color: #263F50;
+}
+
+.mensaje-ganador h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-ganador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.contenido-ganador {
+    position: relative;
+    background-color: white;
+    width: 90%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.4s ease;
+}
+
+.icono-ganador {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.contenido-ganador h2 {
+    color: #263F50;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contenido-ganador p {
+    color: #555;
+    font-size: 16px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.btn-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #777;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cerrar:hover {
+    color: #263F50;
+    transform: scale(1.2);
+}

@@ -1,0 +1,104 @@
+
+<section class="page-header text-center text-white py-5 d-flex align-items-center">
+    <div class="container py-4">
+        <h1 class="display-4 font-serif fw-bold mb-3">Nuestra Carta</h1>
+        <p class="lead max-width-600 mx-auto opacity-90">
+            Descubre una selección de sabores preparados
+            para convertir cada comida en una experiencia especial.</p>
+    </div>
+</section>
+
+<!-- Barras de busqueda -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-container">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="search-bar shadow-sm">
+                        <i class="bi bi-search"></i>
+                            <input type="text" [(ngModel)]="nombreBusqueda" placeholder="Buscar platillo por nombre..."
+                                (keyup.enter)="obtenerDatosCN(nombreBusqueda)">
+
+                        <button type="button" (click)="obtenerDatosCN(nombreBusqueda)"> Buscar</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="search-bar shadow-sm">
+                        <i class="bi bi-search"></i>
+                        <input type="text" [(ngModel)]="ingredienteBusqueda" placeholder="Buscar platillo por ingrediente..."
+                            (keyup.enter)="obtenerDatosCI(ingredienteBusqueda)">
+                        <button type="button" (click)="obtenerDatosCI(ingredienteBusqueda)">Buscar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-filters d-flex justify-content-center flex-wrap gap-2">
+                <button class="btn btn-filter" (click)="filtrarCategoria('Todos')">Todos</button>
+                <button class="btn btn-filter" (click)="filtrarCategoria('Vegetarian')">Vegetarian</button>
+                <button class="btn btn-filter" (click)="filtrarCategoria('Seafood')">Seafood</button>
+                <button class="btn btn-filter" (click)="filtrarCategoria('Chicken')">Chicken</button>
+                <button class="btn btn-filter" (click)="filtrarCategoria('Dessert')">Dessert</button>
+                <button class="btn btn-filter" (click)="filtrarCategoria('Beef')">Beef</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="comidas-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" *ngFor="let comida of comidas">
+                <div class="food-card">
+                    <div class="food-img-wrapper position-relative">
+                        <img [src]="comida.strMealThumb" [alt]="comida.strMeal">
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>{{ comida.strMeal }}</h3>
+                            <span class="precio">{{ comida.precio | currency:'$':'symbol':'1.0-0' }}</span>
+                        </div>
+
+                        <details class="ingredientes">
+                            <summary class="btn-ingredientes">Ver Ingredientes</summary>
+                            <ul>
+                                <li *ngFor="let ingrediente of comida.Ingredient">{{ ingrediente }}</li>
+                            </ul>
+                        </details>
+                        <hr>
+
+                        <div class="acciones">
+                            <div class="cantidad">
+                                <label>Cantidad</label>
+                                <div class="control-cantidad">
+                                    <button type="button" class="btn btn-primary" (click)="disminuirCantidad(comida)">−</button>
+
+                                        <input type="number" class="form-control" [value]="comida.cantidad" readonly>
+
+                                    <button type="button" class="btn btn-primary" (click)="aumentarCantidad(comida)">+</button>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn-agregar"(click)="agregarAlPedido(comida)">Agregar al Pedido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal-fondo" *ngIf="mostrarModal">
+    <div class="modal-contenido">
+        <div class="modal-icono">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+
+        <h3>¡Producto agregado!</h3>
+        <p>La comida se agregó correctamente a tu carrito.</p>
+        <button class="btn-modal" (click)="cerrarModal()">Aceptar</button>
+    </div>
+</div>

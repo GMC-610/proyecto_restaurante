@@ -1,0 +1,110 @@
+<section class="page-header text-center text-white py-5 d-flex align-items-center">
+    <div class="container py-4">
+        <span class="section-label text-gold text-uppercase tracking-widest">Finalizar Compra</span>
+        <h1 class="display-4 font-serif fw-bold mb-2">Tu Pedido</h1>
+        <p class="lead max-width-600 mx-auto opacity-90">
+            Estás a un paso de disfrutar la experiencia MANILA en tu mesa.</p>
+    </div>
+</section>
+
+
+<section class="pedido-section">
+    <div class="container">
+        <form class="row g-4" (ngSubmit)="realizarPedido()">
+            <div class="col-lg-7">
+                <div class="checkout-card mb-4">
+                    <h2 class="card-title font-serif">1. Datos personales</h2>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre completo <span class="required">*</span></label>
+                            <input type="text" id="nombre" name="nombreCompleto" class="form-control custom-input" placeholder="Ej. Carlos Gómez" [(ngModel)]="nombreCompleto" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="telefono" class="form-label">Teléfono de contacto <span class="required">*</span></label>
+
+                            <input type="tel" id="telefono" name="celular" class="form-control custom-input" placeholder="Ej. 300 123 4567" [(ngModel)]="celular" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="checkout-card mb-4">
+                    <h2 class="card-title font-serif">2. Tipo de Entrega</h2>
+                    <div class="delivery-options mb-4">
+                        <label class="delivery-option">
+                            <input type="radio" name="tipoEntrega" value="domicilio" [(ngModel)]="tipoEntrega" required>
+
+                            <div class="option-content">
+                                <i class="bi bi-truck"></i>
+                                <span>A Domicilio</span>
+                            </div>
+                        </label>
+
+                        <label class="delivery-option">
+                            <input type="radio" name="tipoEntrega" value="local" [(ngModel)]="tipoEntrega">
+
+                            <div class="option-content">
+                                <i class="bi bi-shop"></i>
+                                <span>Recoger en Restaurante</span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <div class="row g-3" *ngIf="tipoEntrega === 'domicilio'">
+                        <div class="col-12">
+                            <label for="direccion" class="form-label">
+                                Dirección de entrega <span class="required">*</span>
+                            </label>
+
+                            <input type="text" id="direccion" name="direccion" class="form-control custom-input" placeholder="Calle, Carrera, Av. # Casa/Apto" [(ngModel)]="direccion" [required]="tipoEntrega === 'domicilio'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-5">
+                <div class="order-summary-card">
+                    <h2 class="card-title font-serif mb-4">Resumen de tu Orden</h2>
+                    <div class="order-items mb-4">
+                        <div class="order-item d-flex justify-content-between align-items-center mb-3"
+                            *ngFor="let producto of dataService.pedidoSignal()">
+                            <div class="d-flex align-items-center gap-3">
+                                <img [src]="producto.imagen" [alt]="producto.nombre" width="60" height="60" style="object-fit: cover; border-radius: 10px;">
+
+                                <div>
+                                    <span class="item-qty">{{ producto.cantidad }}x</span>
+                                    <span class="item-name">{{ producto.nombre }}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+
+                                <span class="item-price">
+                                    {{ producto.precio * producto.cantidad | currency:'$':'symbol':'1.0-0' }}
+                                </span>
+
+                                <!-- BOTÓN PARA ELIMINAR -->
+                                <button type="button" class="btn-eliminar" (click)="eliminarProducto(producto)" title="Eliminar producto"> &times; </button>
+                            </div>
+                        </div>
+                        
+                        <p *ngIf="dataService.pedidoSignal().length === 0">Todavía no tienes productos en tu pedido.</p>
+                    </div>
+
+                    <hr class="summary-divider">
+                    <div class="summary-row total-row d-flex justify-content-between mb-4">
+                        <span>Total a Pagar</span>
+                        <span class="total-price">{{ calcularTotal() | currency:'$':'symbol':'1.0-0' }}</span>
+                    </div>
+
+                    <button type="submit" class="btn-confirmar-pedido">Realizar pedido</button>
+                    <button *ngIf="pdfGenerado" class="btn-limpiar-pedido" (click)="limpiarPedido()"> Limpiar pedido </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
