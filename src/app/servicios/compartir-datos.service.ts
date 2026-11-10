@@ -10,7 +10,6 @@ export class CompartirDatosService {
     private platformId = inject(PLATFORM_ID);
     public pedidoSignal = signal<ProductoPedido[]>(this.obtenerPedidoInicial());
 
-// OBTENER PEDIDO GUARDADO
     private obtenerPedidoInicial(): ProductoPedido[] {
         if (isPlatformBrowser(this.platformId)) {
             const pedidoGuardado = localStorage.getItem('pedidoActual');
