@@ -1,6 +1,5 @@
 import { Injectable, signal, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Comidas } from '../entidades/comidas';
 import { ProductoPedido } from '../entidades/producto-pedido';
 
 @Injectable({
@@ -9,38 +8,6 @@ import { ProductoPedido } from '../entidades/producto-pedido';
 
 export class CompartirDatosService {
     private platformId = inject(PLATFORM_ID);
-    public comidaSignal = signal<Comidas[]>(this.obtenerComidaInicial() || []);
-
-    private obtenerComidaInicial() {
-        
-        if (isPlatformBrowser(this.platformId)) {
-            const comidaGuardado = localStorage.getItem('comidaActual');
-            return comidaGuardado ? JSON.parse(comidaGuardado) : null;
-        }
-        return null;
-        }
-
-        enviar(datosComidas: any[]) {
-        console.log('Guardando comidas:', datosComidas);
-
-        this.comidaSignal.set(datosComidas);
-
-        if (isPlatformBrowser(this.platformId)) {
-            localStorage.setItem('comidaActual', JSON.stringify(datosComidas));
-        }
-        }
-
-
-    limpiar() {
-    this.comidaSignal.set([]);
-
-    if (isPlatformBrowser(this.platformId)) {
-        localStorage.removeItem('comidaActual');
-    }
-    }
-
-
-
     public pedidoSignal = signal<ProductoPedido[]>(this.obtenerPedidoInicial());
 
 // OBTENER PEDIDO GUARDADO
