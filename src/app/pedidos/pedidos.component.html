@@ -96,7 +96,6 @@
                     </div>
 
                     <hr class="summary-divider">
-                    <div class="summary-row total-row d-flex justify-content-between mb-4">
                         <div class="d-flex justify-content-between">
                             <span>Cantidad total de productos:</span>
                             <strong>{{ cantidadTotal() }}</strong>
@@ -105,7 +104,7 @@
                             <span>Total a pagar:</span>
                             <strong>{{ calcularTotal() | currency:'COP':'symbol':'1.0-0' }}</strong>
                         </div>
-                    </div>
+                    
 
                     <button type="submit" class="btn-confirmar-pedido">Realizar pedido</button>
                     <button *ngIf="pdfGenerado" class="btn-limpiar-pedido" (click)="limpiarPedido()"> Limpiar pedido </button>
