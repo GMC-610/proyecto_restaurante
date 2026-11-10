@@ -150,15 +150,23 @@ export class BebidasComponent implements OnInit {
 /*-----------------------------BUSQUEDA POR CATEGORÍA------------------------------------------*/
 
     obtenerDatosBC(categoria: string) {
-
         this.apiService.mostrarDatosBC(categoria)
             .then(data => {
-                this.bebidas = (data.drinks || []).map((item: any) =>
-                    this.convertirBebidas(item)
+                let resultados = data.drinks || [];
+                return Promise.all(
+                    resultados.map((item: any) =>
+                        this.apiService.mostrarDetalleB(item.idDrink)
+                    )
                 );
-                this.bebidasOriginales = [...this.bebidas];
+            })
+
+            .then(datos => {
+                this.bebidas = datos
+                    .filter(item => item.drinks)
+                    .map(item => this.convertirBebidas(item.drinks[0]));
                 console.log('Bebidas por categoría:', this.bebidas);
             })
+
             .catch(error => {
                 console.error('Error al buscar bebidas:', error);
             });
