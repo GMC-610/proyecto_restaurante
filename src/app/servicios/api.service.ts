@@ -12,33 +12,31 @@ export class ApiService {
   private urlCN ="https://www.themealdb.com/api/json/v1/1/search.php?s="
 
   mostrarDatosCN(nombre: string){
-    return fetch(this.urlCN + nombre)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    return data;
-  })
-  .catch(error => {
-    console.error('Error al obtener los datos:', error);
-    throw error;
-  });
+      return fetch(this.urlCN + nombre)
+    .then(response => response.json())
+    .then(data => {console.log(data);
+      return data;
+    })
+    .catch(error => {
+      console.error('Error al obtener los datos:', error);
+      throw error;
+    });
   }
 
 /*---------------------------------------------BUSCAR COMIDA POR INGREDIENTE------------------------------------------ */
   
   private urlCI ="https://www.themealdb.com/api/json/v1/1/filter.php?i="
   mostrarDatosCI(ingrediente: string){
-    return fetch(this.urlCI + ingrediente)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    return data;
-  })
-  .catch(error => {
-    console.error('Error al obtener los datos:', error);
-    throw error;
-  });
-  }
+      return fetch(this.urlCI + ingrediente)
+    .then(response => response.json())
+    .then(data => {console.log(data);
+      return data;
+    })
+    .catch(error => {
+      console.error('Error al obtener los datos:', error);
+      throw error;
+    });
+    }
 
   private urlDetalle = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
   mostrarDetalle(id: string) {
@@ -52,9 +50,7 @@ export class ApiService {
 
       return fetch(this.urlCC + categoria)
           .then(response => response.json())
-          .then(data => {
-              return data;
-          })
+          .then(data => {return data;})
           .catch(error => {
               console.error('Error al obtener los datos:', error);
               throw error;
@@ -65,31 +61,27 @@ export class ApiService {
   private urlBN ="https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 
   mostrarDatosBN(nombre: string){
-    return fetch(this.urlBN + nombre)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    return data;
-  })
-  .catch(error => {
-    console.error('Error al obtener los datos:', error);
-    throw error;
-  });
+      return fetch(this.urlBN + nombre)
+    .then(response => response.json())
+    .then(data => {console.log(data);
+      return data;
+    })
+    .catch(error => {
+      console.error('Error al obtener los datos:', error);
+      throw error;
+    });
   }
   /*---------------------------------------------BUSCAR BEBIDA POR INGREDIENTE------------------------------------------ */
 
   private urlBL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
 
   mostrarDatosBL(letra: string) {
-
-      return fetch(this.urlBL + letra)
-          .then(response => response.json())
-          .then(data => {
-              return data;
-          })
-          .catch(error => {
-              console.error('Error al obtener las bebidas:', error);
-              throw error;
+    return fetch(this.urlBL + letra)
+        .then(response => response.json())
+        .then(data => {return data;})
+        .catch(error => {
+            console.error('Error al obtener las bebidas:', error);
+            throw error;
           });
 
   }
@@ -106,10 +98,8 @@ export class ApiService {
   mostrarDatosBA(tipo: string) {
       return fetch(this.urlBA + tipo)
           .then(response => response.json())
-          .then(data => {
-              console.log(data);
-              return data;
-          })
+          .then(data => {console.log(data);
+              return data;})
           .catch(error => {
               console.error('Error al obtener las bebidas:', error);
               throw error;
@@ -123,9 +113,7 @@ export class ApiService {
   mostrarDatosBC(categoria: string) {
       return fetch(this.urlBC + categoria)
           .then(response => response.json())
-          .then(data => {
-              return data;
-          })
+          .then(data => {return data;})
           .catch(error => {
               console.error('Error al obtener los datos:', error);
               throw error;
