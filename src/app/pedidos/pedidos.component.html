@@ -97,6 +97,8 @@
 
                     <hr class="summary-divider">
                     <div class="summary-row total-row d-flex justify-content-between mb-4">
+                        <span>Cantidad total de productos:</span>
+                            <strong>{{ cantidadTotal() }}</strong>
                         <span>Total a Pagar</span>
                         <span class="total-price">{{ calcularTotal() | currency:'$':'symbol':'1.0-0' }}</span>
                     </div>
