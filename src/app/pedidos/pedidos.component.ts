@@ -51,8 +51,6 @@ export class PedidosComponent {
     }
 
 
-
-
     async realizarPedido() {
         if (this.dataService.pedidoSignal().length === 0) {
             alert('No tienes productos en tu pedido.');
