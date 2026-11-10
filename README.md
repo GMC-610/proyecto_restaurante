@@ -61,6 +61,15 @@ Proporciona información e imágenes de diferentes comidas.
 ### TheCocktailDB
 Proporciona información e imágenes de bebidas y cócteles.
 
+
+##  Proyecto en línea
+
+Puedes visitar y explorar MANILA desde el siguiente enlace:
+
+```bash
+proyecto-restaurante-wheat.vercel.app
+```
+
 ## Instalación y ejecución
 
 Sigue los siguientes pasos para descargar e iniciar el proyecto en tu computador.
@@ -109,4 +118,5 @@ El proyecto se abrirá automáticamente en el navegador. Si no sucede, ingresa a
 ```text
 http://localhost:4200/
 ```
+
 
