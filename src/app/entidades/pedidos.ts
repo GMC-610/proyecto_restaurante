@@ -18,6 +18,15 @@ export class Pedido {
         this.productos = productos;
     }
 
+    cantidadTotal(): number {
+        let total = 0;
+        this.productos.forEach(producto => {
+            total += producto.cantidad;
+        });
+
+        return total;
+    }
+
     calcularTotal(): number {
         let total = 0;
         this.productos.forEach(producto => {
