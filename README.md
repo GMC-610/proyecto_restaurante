@@ -1,27 +1,112 @@
-# ProyectoRestaurante
+# Proyecto Restaurante: MANILA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+*Gastronomía, naturaleza y momentos que permanecen.*
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+MANILA es una plataforma web desarrollada para un restaurante de temática costera, que busca ofrecer a sus usuarios una experiencia gastronómica agradable.
 
-## Code scaffolding
+El proyecto permite explorar una amplia variedad de comidas y bebidas, consultar sus características y realizar pedidos de manera sencilla. Su diseño está inspirado en ambientes playeros, combinando una estética elegante con una experiencia de navegación amigable e intuitiva.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades
 
-## Build
+### Página de inicio
+Presentación del restaurante, información relevante, platos estrella, fotografías de la comida y experiencias que ofrece.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Catálogo de comidas y bebidas
+Consulta de diferentes platillos y bebidas disponibles, con sus respectivos ingredientes y precios.
 
-## Running unit tests
+### Búsqueda y filtrado
+Localización de productos según su nombre, ingrediente o categoría, para que la búsqueda sea rápida y sencilla.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Juego
+Sección interactiva de entretenimiento para los usuarios.
 
-## Running end-to-end tests
+### Gestión de pedidos
+Selección de productos y cantidades para conformar un pedido.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Datos del cliente
+Registro de la información necesaria para realizar el pedido, incluyendo nombre completo, celular y dirección cuando corresponda.
 
-## Further help
+### Comprobante en PDF
+Generación y descarga de un documento PDF con el resumen del pedido y los datos del cliente.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Tecnologías utilizadas
+
+### Angular
+Framework utilizado para el desarrollo frontend.
+
+### TypeScript
+Lenguaje utilizado para la lógica de la aplicación y la programación orientada a objetos.
+
+### HTML
+Estructura de la página web.
+
+### CSS
+Estilos y diseño visual.
+
+### Bootstrap
+Diseño adaptable y componentes de interfaz.
+
+### jsPDF
+Generación de documentos PDF.
+
+## APIs externas
+
+El proyecto utiliza las siguientes APIs para obtener información de comidas y bebidas:
+
+### TheMealDB
+Proporciona información e imágenes de diferentes comidas.
+
+### TheCocktailDB
+Proporciona información e imágenes de bebidas y cócteles.
+
+## Instalación y ejecución
+
+Sigue los siguientes pasos para descargar e iniciar el proyecto en tu computador.
+
+### 1. Requisitos previos
+
+Debes tener instalados:
+
+- Node.js
+- npm (incluido con Node.js)
+- Angular CLI
+- Git
+
+### 2. Clonar el repositorio
+
+Abre una terminal y ejecuta el siguiente comando:
+
+```bash
+git clone https://github.com/GMC-610/proyecto_restaurante.git
+```
+
+### 3. Ingresar al directorio del proyecto
+
+```bash
+cd proyecto_restaurante
+```
+
+### 4. Instalar las dependencias
+
+Ejecuta el siguiente comando para instalar los paquetes necesarios:
+
+```bash
+npm install
+```
+
+### 5. Iniciar el servidor de desarrollo
+
+```bash
+ng serve -o
+```
+
+### 6. Abrir la aplicación
+
+El proyecto se abrirá automáticamente en el navegador. Si no sucede, ingresa a:
+
+```text
+http://localhost:4200/
+```
+
