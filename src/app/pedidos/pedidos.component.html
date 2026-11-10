@@ -100,13 +100,13 @@
                     <div class="summary-row total-row mb-4">
 
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <span>Cantidad total de productos:</span>
-                            <strong>{{ cantidadTotal() }}</strong>
+                            <strong><span>Cantidad total de productos:</span>
+                            {{ cantidadTotal() }}</strong>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center">
-                            <span>Total a pagar:</span>
-                            <strong>{{ calcularTotal() | currency:'COP':'symbol':'1.0-0' }}</strong>
+                            <strong><span>Total a pagar:</span>
+                            {{ calcularTotal() | currency:'COP':'symbol':'1.0-0' }}</strong>
                         </div>
 
                     </div>
