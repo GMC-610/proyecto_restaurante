@@ -31,6 +31,15 @@ export class PedidosComponent {
     pdfGenerado: boolean = false;
 
 
+    cantidadTotal(): number {
+        let total = 0;
+        this.dataService.pedidoSignal().forEach(producto => {
+            total += producto.cantidad;
+        });
+        return total;
+    }
+
+
     calcularTotal(): number {
         let total = 0;
 
@@ -40,6 +49,8 @@ export class PedidosComponent {
 
         return total;
     }
+
+
 
 
     async realizarPedido() {
