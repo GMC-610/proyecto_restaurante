@@ -1,27 +1,63 @@
-# ProyectoRestaurante
+# Proyecto restaurante: MANILA
+Gastronomía, naturaleza y momentos que permanecen.
+## Descripción
+MANILA es una plataforma web desarrollada para un restaurante de temática costera, que busca ofrecer a sus usuarios una experiencia gastronómica agradable.
+El proyecto permite explorar una amplia variedad de comidas y bebidas, consultar sus características, y realizar pedidos de manera sencilla. Su diseño está inspirado en ambientes playeros, combinando una estética elegante con una experiencia de navegación amigable y intuitiva.
+## Funcionalidades
+### Página de inicio:
+Presentación del restaurante, información relevante, platos estrellas, fotografías de la comida y experiencias que ofrecen.
+### Catálogo de comidas y bebidas: 
+Consulta de diferentes platillos y bebidas disponibles, con sus respectivos ingredientes y precios.
+### Búsqueda y filtrado: 
+Localización de productos según su nombre, ingrediente o categoría, para que la búsqueda sea rápida y sencilla.
+### Juego:
+ 
+### Gestión de pedidos: 
+Selección de productos y cantidades.
+### Datos del cliente: 
+Registro de información necesaria para realizar el pedido.
+### Comprobante en PDF: 
+Generación y descarga de un documento pdf con el resumen del pedido.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+## Tecnología
+### Angular:
+Framework para el desarrollo frontend.
+### TypeScript:
+Lenguaje utilizado para la lógica de la aplicación.
+### HTML:
+Estructura de la página web.
+### CSS:
+Estilos y diseño visual.
+### Bootstrap:
+Diseño adaptable y componentes de interfaz.
+### jsPDF:
+Generación de documentos PDF.
 
-## Development server
+## Apis externas
+El proyecto utiliza las siguientes APIs para obtener información de comidas y bebidas:
+## TheMealDB: 
+Proporciona información e imágenes de diferentes comidas.
+## TheCocktailDB: 
+Proporciona información e imágenes de bebidas y cócteles.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Instalación y ejecución
+Sigue los siguientes pasos para descargar e iniciar el proyecto en tu computador.
+1. Requisitos previos
+Debes de tener instalados:
+Node.js -
+ npm (incluido con Node.js) -
+ Angular CLI - 
+Git.
+2. Clonar el repositorio
+Abre una terminal y ejecuta el siguiente comando:
+git clone 
+4. Ingresar al directorio del proyecto
+cd proyecto_restaurante
+5. Instalar las dependencias:
+Ejecuta el siguiente comando para instalar los paquetes necesarios:
+npm install
+6. Iniciar el servidor de desarrollo
+ng serve -o
+7. Abrir la aplicación:
+Abre tu navegador e ingresa a:
+http://localhost:4200/
