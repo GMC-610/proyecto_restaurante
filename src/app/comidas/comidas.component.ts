@@ -147,15 +147,11 @@ export class ComidasComponent implements OnInit {
             }
         }
 
-        // Buscar si la comida ya tiene un precio guardado
         let precio = this.preciosComidas[datos.idMeal];
 
-        // Si no existe, generar un precio aleatorio
         if (precio === undefined) {
             precio = Math.floor(Math.random() * 7) * 10000 + 10000;
-            // Guardar el precio en el objeto
             this.preciosComidas[datos.idMeal] = precio;
-            // Guardar todos los precios en localStorage
             if (isPlatformBrowser(this.platformId)) {
                 localStorage.setItem(
                     'preciosComidas',
